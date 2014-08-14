@@ -62,12 +62,13 @@ Limitations
 -----------
 The Markdown spec says that Markdown converted to HTML should use
 `<em>` and `<strong>` tags. On most browsers, those map to italics and
-boldface, respectively. However, the `Html.fromHtml()` method in Android
+boldface, respectively. However, at least on Android 2.x releases,
+the `Html.fromHtml()` method in Android
 that creates a `SpannedString` from HTML source flips those, so what you
 might be used to seeing in boldface turns into italics and vice-versa.
 This should only be an issue if you are displaing the Markdown-generated
 HTML in a `TextView` &mdash; `WebView` in particular should behave more
-normally.
+normally.  In addition, this appears to be fixed in Android 4.x
 
 Also, while hoedown is very fast, using the resulting HTML will inevitably
 be slower. The same 5K sample file that hoedown processes in about 1
